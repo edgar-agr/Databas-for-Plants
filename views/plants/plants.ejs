@@ -1,0 +1,27 @@
+<%- include('../includes/head.ejs') %>
+        <link rel="stylesheet" href="/css/plants.css">
+<%- include('../includes/header.ejs')%>
+<main>
+
+    <div class="add__form">
+        <a class="add__form-btn" href="/addplant">Add a new plant</a>
+    </div>
+
+    <% if (plants.length > 0) { %>
+        <div class="plants__grid">
+            <% for(var i=0; i < plants.length;i++) { %>
+                <form class="plants__card" action="/deleteplant/<%= plants[i]._id %>" method="POST">
+                    <h2><%= plants[i].name %></h2>
+                    <img src="<%= plants[i].imgUrl %>" alt="<%= plants[i].name %>">
+                    <a class="plants__card-btn" href="/addplant/<%= plants[i]._id %>" type="submit">Edit</a>
+                    <button class="plants__card-btn" type="submit">Delete!</button>
+                </form>
+            <% } %>
+        </div>
+    <% } else { %>
+        <h1>No Products Found!</h1>
+    <% } %>
+</main>
+
+</body>
+</html>

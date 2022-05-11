@@ -1,0 +1,65 @@
+.add__form{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.add__form-btn{
+    display: block;
+    padding: 1rem;
+    border: 1px solid #56a0d3;
+    font-size: 16px;
+    color: #56a0d3;
+    margin: 1rem;
+    border-radius:  10px;
+    text-decoration: none;
+}
+
+.plants__grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    margin: 3rem;
+    gap: 2rem;
+}
+
+.plants__card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #a2a2a2;
+    border-radius: 50px;
+}
+
+.plants__card:hover{
+    transform: scale(1.01);
+}
+
+.plants__card h2{
+    text-align: center;
+    margin: .75rem 0;
+}
+
+.plants__card img{
+    height: 250px;
+    border-radius: 30px;
+    width: 90%;
+    padding: 0 5%;
+}
+
+.plants__card-btn{
+    border: 1px solid #56a0d3;
+    background-color: #56a0d3;
+    height: 30px;
+    font-size: 24px;
+    width: 40%;
+    border-radius: 5px;
+    color: white;
+    margin: 0.75rem 30%;
+    text-decoration: none;
+    text-align: center;
+}
+
+.plants__card-btn:hover{
+    background-color: #99BADD;
+    transform: scale(1.01);
+    cursor: pointer;
+}
