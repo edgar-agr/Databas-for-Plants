@@ -1,0 +1,62 @@
+.add__plant-title{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 36px;
+}
+
+.add__plant-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem;
+}
+
+.add__plant-label{
+    text-align: right;
+    font-size: xx-large;
+}
+
+.add__plant-name{
+    grid-column: 2 / 4;
+}
+
+.add__plant-imgUrl{
+    grid-column: 2/5;
+}
+
+.add__plant-description{
+    grid-column: 2/5;
+    
+}
+
+.add__plant-price,
+.add__plant-description,
+.add__plant-name,
+.add__plant-ecosystem,
+.add__plant-imgUrl{
+    font-size: x-large;
+}
+
+.add__plant-wrap{
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    grid-column: 2/4;
+}
+
+.add__plant-btn{
+    border: 1px solid #56a0d3;
+    background-color: transparent;
+    height: 50px;
+    font-size: 28px;
+    width: 50%;
+    border-radius: 5px;
+    color: #56a0d3;
+}
+
+.add__plant-btn:hover{
+    background-color: #99BADD;
+    transform: scaleX(1.05);
+    color: black;
+    cursor: pointer;
+}

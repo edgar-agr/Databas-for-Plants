@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+        <link rel="stylesheet" type="text/css" href="/css/plantFormat.css">
+<%- include('../includes/header.ejs')%>
+<main>
+    <h1 class="add__plant-title">Add a new Plant!</h1>
+    <form class="add__plant-form" action="/addplant" method="post">
+        <input type="hidden" name="id" value="<%= id %>">
+        <label class="add__plant-label" for="name">Plant Name:</label>
+        <input class="add__plant-name"  type="text" placeholder="Plant name" name="name" id="name" value="<%= name %>">
+        <div></div>
+
+        <label class="add__plant-label" for="price">Plant Price:</label>
+        <input class="add__plant-price"  type="number" placeholder="Plant price" name="price" id="price" step="0.01" value="<%= price %>">
+        
+        <label class="add__plant-label" for="ecosystem">Plant Ecosystem:</label>
+        <select class="add__plant-ecosystem" name="ecosystem" id="ecosystem" >
+            <option value="Forest"     <%= (ecosystem === 'Forest') && 'selected' %> >Forest</option>
+            <option value="Grassland"  <%= (ecosystem === 'Grassland') && 'selected' %> >Grassland</option>
+            <option value="Desert"     <%= (ecosystem === 'Desert') && 'selected' %> >Desert</option>
+            <option value="Tundra"     <%= (ecosystem === 'Tundra') && 'selected' %> >Tundra</option>
+            <option value="Freshwater" <%= (ecosystem === 'Freshwater') && 'selected' %> >Freshwater</option>
+            <option value="Marine"     <%= (ecosystem === 'Marine') && 'selected' %> >Marine</option>
+        </select>
+
+        <label class="add__plant-label" for="imgUrl">Plant Url:</label>
+        <input class="add__plant-imgUrl"  type="text" placeholder="Plant Url" name="imgUrl" id="imgUrl" value="<%= imgUrl %>">
+
+        <label class="add__plant-label" for="description">Plant Description:</label>
+        <textarea class="add__plant-description"   placeholder="Plant description" name="description" id="description" rows="10" ><%= description %></textarea>
+
+        <div class="add__plant-wrap">
+            <button type="submit" class="add__plant-btn"><%= toDo %></button>
+        </div>
+    </form>
+</main>
+</body>
+</html>

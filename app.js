@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
+const bodyParser = require('body-parser')
 
 const plants = require('./routes/plants');
 const error = require('./controller/error');
@@ -12,7 +13,7 @@ app.set('views','views');
 
 app.use(express.static(path.join(__dirname,'public')));
 
-app.use(express.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 const MONGODB_URI = 'mongodb+srv://Edgar:12345@cluster0.yfixe.mongodb.net/Vivero?retryWrites=true&w=majority';
 
