@@ -1,0 +1,41 @@
+<%- include('../includes/head.ejs') %>
+        <link rel="stylesheet" href="/css/format.css">
+<%- include('../includes/header.ejs')%>
+        <main>
+                <h1 class="add__title"><%= toDo %> a user!</h1>
+                <form class="add__form" action="/adduser" method="post">
+                        <input type="hidden" name="id" value="<%= id %>">
+                        <label class="add__label" for="firstName">First Name:</label>
+                        <input class="add__font-large"  type="text" placeholder="First name" name="firstName" id="firstName" value="<%= firstName %>">
+                        <label class="add__label" for="lastName">Last Name:</label>
+                        <input class="add__font-large"  type="text" placeholder="Last name" name="lastName" id="lastName" value="<%= lastName %>">
+
+                        <label class="add__label" for="phone">Phone:</label>
+                        <input class="add__font-large"  type="number" placeholder="Phone" name="phone" id="phone" value="<%= phone %>">
+
+                        <label class="add__label add__column-new" for="email">Email:</label>
+                        <input class="add__font-large"  type="text" placeholder="E-mail" name="email" id="email" value="<%= email %>">
+
+                        <label class="add__label add__column-new" for="street">Street:</label>
+                        <input class="add__font-large"  type="text" placeholder="Street" name="street" id="street" value="<%= address.street %>">
+                        <label class="add__label" for="city">City:</label>
+                        <input class="add__font-large"  type="text" placeholder="City" name="city" id="city" value="<%= address.city %>">
+
+                        <label class="add__label" for="country">Country:</label>
+                        <input class="add__font-large"  type="text" placeholder="Country" name="country" id="country" value="<%= address.country %>">
+                        <label class="add__label" for="zip">Zip Code:</label>
+                        <input class="add__font-large"  type="number" placeholder="Zip code" name="zip" id="zip" value="<%= address.zip %>">
+                        
+                        <label class="add__label" for="role">Role:</label>
+                        <select class="add__font-large" name="role" id="rol" >
+                                <option value="User"     <%= (role === 'User') && 'selected' %> >User</option>
+                                <option value="Admin"     <%= (role === 'Admin') && 'selected' %> >Administrator</option>
+                        </select>
+
+                        <div class="add__wrap add__column-new">
+                                <button type="submit" class="add__btn"><%= toDo %></button>
+                        </div>
+                </form>
+        </main>
+    </body>
+</html>

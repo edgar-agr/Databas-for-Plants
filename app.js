@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser')
 
 const plants = require('./routes/plants');
+const users = require('./routes/users');
 const error = require('./controller/error');
 
 const app = express();
@@ -17,7 +18,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 
 const MONGODB_URI = 'mongodb+srv://Edgar:12345@cluster0.yfixe.mongodb.net/Vivero?retryWrites=true&w=majority';
 
-app.use(plants)
+app.use(plants);
+app.use(users);
 
 app.use(error.getError404);
 
