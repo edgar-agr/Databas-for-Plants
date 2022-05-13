@@ -1,0 +1,28 @@
+<%- include('../includes/head.ejs') %>
+        <link rel="stylesheet" href="/css/users.css">
+<%- include('../includes/header.ejs')%>
+        <main>
+            <div class="users__form">
+                <a class="users__form-btn" href="/adduser">Add a new user</a>
+            </div>
+            <% if (users){%>
+                <% for(var i = 0; i < users.length; i++){ %>
+                    <form class="users__border" action="/users" method="POST">
+                        <input type="hidden" value="<%= users[i]._id %>" name="id">
+                        <div class="users__card">
+                            <h2><%= (i+1) %></h2>
+                            <h2><%= users[i].firstName %> <%= users[i].lastName %></h2>
+                            <h2><%= users[i].email %></h2>
+                            <div class="users__card-buttons">
+                                <a href="/edituser/<%= users[i]._id %>" class="users__card-btn"> Edit</a>
+                                <button class="users__card-btn" type="submit">Delete</button>
+                            </div>
+                        </div>
+                    </form>
+                <% } %>
+            <% } else { %>
+                <h1>Sorry no users found!</h1>
+            <% } %>
+        </main>
+    </body>
+</html>
